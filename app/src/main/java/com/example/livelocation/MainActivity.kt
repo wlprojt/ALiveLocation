@@ -57,19 +57,11 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             LiveLocationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize()
-                    ) {
-                        LocationScreen(
-                            locationText = locationText,
-                            onStartTracking = { checkPermissionAndStart() },
-                            onStopTracking = { stopLocationUpdates() }
-                        )
-                    }
-                }
+                LocationScreen(
+                    locationText = locationText,
+                    onStartTracking = { checkPermissionAndStart() },
+                    onStopTracking = { stopLocationUpdates() }
+                )
             }
         }
     }
